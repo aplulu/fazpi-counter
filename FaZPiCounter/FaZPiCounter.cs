@@ -18,8 +18,7 @@ namespace FaZPiCounter
 
         [Inject] private readonly PluginConfig _config = null;
         
-        private readonly Dictionary<ISaberSwingRatingCounter, float> _noteCutMap = new Dictionary<ISaberSwingRatingCounter, float
-        >();
+        private readonly Dictionary<ISaberSwingRatingCounter, float> _noteCutMap = new Dictionary<ISaberSwingRatingCounter, float>();
 
         private int _belowThresholdCount = 0;
         private TMP_Text _counter;
@@ -56,6 +55,7 @@ namespace FaZPiCounter
         public void HandleSaberSwingRatingCounterDidFinish(ISaberSwingRatingCounter saberSwingRatingCounter)
         {
             var cutDistanceToCenter = _noteCutMap[saberSwingRatingCounter];
+            _noteCutMap.Remove(saberSwingRatingCounter);
             ScoreModel.RawScoreWithoutMultiplier(saberSwingRatingCounter, cutDistanceToCenter, out var beforeCutScore,
                 out var afterCutScore, out var distanceScore);
             var score = beforeCutScore + afterCutScore + distanceScore;
