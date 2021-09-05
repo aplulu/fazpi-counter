@@ -8,10 +8,10 @@
       <Reference Include="BeatmapCore, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
         <HintPath>$(BeatSaberPath)\Beat Saber_Data\Managed\BeatmapCore.dll</HintPath>
       </Reference>
-      <Reference Include="BSML, Version=1.5.5.0, Culture=neutral, PublicKeyToken=null">
+      <Reference Include="BSML">
         <HintPath>$(BeatSaberPath)\Plugins\BSML.dll</HintPath>
       </Reference>
-      <Reference Include="Counters+, Version=2.2.2.0, Culture=neutral, PublicKeyToken=null">
+      <Reference Include="Counters+">
         <HintPath>$(BeatSaberPath)\Plugins\Counters+.dll</HintPath>
       </Reference>
       <Reference Include="GameplayCore, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
@@ -29,7 +29,7 @@
       <Reference Include="Main, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
         <HintPath>$(BeatSaberPath)\Beat Saber_Data\Managed\Main.dll</HintPath>
       </Reference>
-      <Reference Include="SiraUtil, Version=2.5.8.0, Culture=neutral, PublicKeyToken=null">
+      <Reference Include="SiraUtil">
         <HintPath>$(BeatSaberPath)\Plugins\SiraUtil.dll</HintPath>
       </Reference>
       <Reference Include="Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
@@ -68,7 +68,6 @@
     <ItemGroup>
       <Content Include="FaZPiCounter.csproj.user" />
     </ItemGroup>
-
 
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
       <Exec Command="copy &quot;$(TargetPath)&quot; &quot;$(BeatSaberPath)\Plugins&quot;" />
